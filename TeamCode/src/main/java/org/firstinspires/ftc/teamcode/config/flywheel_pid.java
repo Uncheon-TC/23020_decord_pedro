@@ -45,7 +45,8 @@ public class flywheel_pid extends OpMode {
         SL.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         SR.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
-        SR.setDirection(DcMotorSimple.Direction.REVERSE);
+        SL.setDirection(DcMotorSimple.Direction.REVERSE);
+        SR.setDirection(DcMotorSimple.Direction.FORWARD);
 
         SL.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
         SR.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
