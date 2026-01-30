@@ -8,8 +8,8 @@ public class shooter_const {
     public static double SCORE_ANGLE = Math.toRadians(-30); //rad
     //public static double PASS_THROUGH_POINT_RADIUS = 5; //inch
 
-    public static double HOOD_MIN_ANGLE = Math.toRadians(35);
-    public static double HOOD_MAX_ANGLE = Math.toRadians(60);
+    public static double HOOD_MIN_ANGLE = Math.toRadians(45);
+    public static double HOOD_MAX_ANGLE = Math.toRadians(45);
     public static double HOOD_SERVO_MIN = servo_pos_const.servo_hood_min;
     public static double HOOD_SERVO_MAX = servo_pos_const.servo_hood_max;
 

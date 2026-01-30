@@ -56,7 +56,7 @@ public class blue_teleop extends LinearOpMode {
 
         follower = Constants.createFollower(hardwareMap);
 
-        follower.setStartingPose(new Pose(5,76,90));
+        follower.setStartingPose(new Pose(5,76,Math.toRadians(90)));
 
         SL.setDirection(DcMotorSimple.Direction.REVERSE);
         SR.setDirection(DcMotorSimple.Direction.FORWARD);
@@ -87,14 +87,7 @@ public class blue_teleop extends LinearOpMode {
         FrontRightMotor.setDirection(DcMotorSimple.Direction.REVERSE);
         BackRightMotor.setDirection(DcMotorSimple.Direction.REVERSE);
 
-        imu = hardwareMap.get(IMU.class, "imu");
-        IMU.Parameters parameters = new IMU.Parameters(
-                new RevHubOrientationOnRobot(
-                        RevHubOrientationOnRobot.LogoFacingDirection.RIGHT,
-                        RevHubOrientationOnRobot.UsbFacingDirection.DOWN
-                )
-        );
-        imu.initialize(parameters);
+
 
         servo_L = hardwareMap.servo.get("servo_L");
         servo_R = hardwareMap.servo.get("servo_R");
@@ -119,8 +112,6 @@ public class blue_teleop extends LinearOpMode {
 
             follower.update();
 
-            previousGamepad1.copy(currentGamepad1);
-            currentGamepad1.copy(gamepad1);
 
             shooter.ShotResult result =
                     shooter.calculateShot(
