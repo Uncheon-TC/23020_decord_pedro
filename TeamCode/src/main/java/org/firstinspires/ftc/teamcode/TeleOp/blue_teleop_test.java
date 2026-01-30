@@ -17,6 +17,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.hardware.I2cDevice;
 import com.qualcomm.robotcore.hardware.IMU;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.Range;
@@ -44,7 +45,8 @@ public class blue_teleop_test extends LinearOpMode {
     private DcMotor FrontLeftMotor, FrontRightMotor, BackLeftMotor, BackRightMotor; //메카넘
     private DcMotor GT;
     private DcMotorEx SL, SR;
-    private Servo servo_L, servo_R;
+    private Servo servo_L, servo_R, light_L, light_R;
+    private I2cDevice colorSensor_L, colorSensor_R;
     private IMU imu;
     Turret_Tracking tracking = new Turret_Tracking();
     private Follower follower;
@@ -124,6 +126,12 @@ public class blue_teleop_test extends LinearOpMode {
 
         servo_R = hardwareMap.servo.get("servo_R");
         servo_R.setPosition(servo_pos_const.servo_hood_min);  //기본위치 찾기
+
+        colorSensor_L = hardwareMap.i2cDevice.get("colorSensor_L");
+        colorSensor_R = hardwareMap.i2cDevice.get("colorSensor_R");
+
+        light_L = hardwareMap.servo.get("light_L");
+        light_R = hardwareMap.servo.get("light_R");
 
 
         com.qualcomm.robotcore.hardware.PIDFCoefficients flywheel_pidfCoeffiients
