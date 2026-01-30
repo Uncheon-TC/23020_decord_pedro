@@ -21,8 +21,8 @@ import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 import org.firstinspires.ftc.teamcode.auto_cal.shooter;
 import org.firstinspires.ftc.teamcode.pedroPathing.Constants;
 
-@TeleOp(name = "decode red", group = "2024-2025 Test OP")
-public class red_teleOp_test extends LinearOpMode {
+@TeleOp(name = "decode blue", group = "2024-2025 Test OP")
+public class blue_teleop extends LinearOpMode {
 
     private DcMotor GT;
     private DcMotorEx SL, SR;
